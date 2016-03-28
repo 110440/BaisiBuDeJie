@@ -18,10 +18,9 @@ class ZoomImageScrollView: UIScrollView , UIScrollViewDelegate {
     var imageViewContentMode:ZoomImageScrollViewContentMode = .ScaleToFit
     var clickAction:(()->Void)?
     
-    lazy var imageView:UIImageView = {
+    lazy var imageView:YLImageView = {
         let size = self.bounds.size
-        let imageView = UIImageView()
-        imageView.frame = CGRectMake(0, 0, size.width, size.height)
+        let imageView = YLImageView(frame: CGRectMake(0, 0, size.width, size.height))
         imageView.userInteractionEnabled = true
         self.addSubview(imageView)
         return imageView
@@ -38,7 +37,7 @@ class ZoomImageScrollView: UIScrollView , UIScrollViewDelegate {
         self.delegate = self
         self.initTap()
     }
-    
+ 
     private func initTap(){
         //let tap = UITapGestureRecognizer(target: self, action: "doubleTapScrollView:")
         //tap.numberOfTapsRequired = 2
@@ -50,20 +49,23 @@ class ZoomImageScrollView: UIScrollView , UIScrollViewDelegate {
         self.addGestureRecognizer(tap2)
     }
     
-    func setImage(image:UIImage){
+    func setImage(image:UIImage , size:CGSize = CGSizeZero ){
         
+        let imageViewSize = (size == CGSizeZero) ? image.size:size
+            
         self.layoutIfNeeded()
         self.zoomScale = 1
         
         self.imageView.image = image
-        self.imageView.contentMode = UIViewContentMode.Center
-        self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height)
+        self.imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        self.imageView.frame = CGRectMake(0, 0, imageViewSize.width,imageViewSize.height)
+        self.imageView.startAnimating()
         
-        self.contentSize = image.size
+        self.contentSize = imageViewSize
         
         let scrollViewFrame = self.frame
-        let scaleWidth = scrollViewFrame.size.width / image.size.width
-        let scaleHeight = scrollViewFrame.size.height / image.size.height
+        let scaleWidth = scrollViewFrame.size.width / imageViewSize.width
+        let scaleHeight = scrollViewFrame.size.height / imageViewSize.height
         var minScale = scaleWidth
         if self.imageViewContentMode == .ScaleToFit{
             minScale = min(scaleHeight, scaleWidth)

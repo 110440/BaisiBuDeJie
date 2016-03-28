@@ -49,7 +49,7 @@ class ImageViewerDismissTransition: NSObject, UIViewControllerAnimatedTransition
             
         }) { (complate) -> Void in
             fromViewController.view.removeFromSuperview()
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+            transitionContext.completeTransition(true)
         }        
         
     }

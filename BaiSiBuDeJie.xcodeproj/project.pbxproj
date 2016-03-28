@@ -22,18 +22,18 @@
 		D4015E001CA2412F003B05DC /* imageViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4015DFF1CA2412F003B05DC /* imageViewMode.swift */; };
 		D4015E021CA2471E003B05DC /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4015E011CA2471E003B05DC /* ImageCell.swift */; };
 		D4015E051CA25273003B05DC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4015E041CA25273003B05DC /* Utils.swift */; };
-		D42061811CA8E36B0045BD0F /* Kingfisher+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D420617E1CA8E36B0045BD0F /* Kingfisher+GIF.swift */; };
-		D42061821CA8E36B0045BD0F /* YLGIFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D420617F1CA8E36B0045BD0F /* YLGIFImage.swift */; };
-		D42061831CA8E36B0045BD0F /* YLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42061801CA8E36B0045BD0F /* YLImageView.swift */; };
-		D48F5A7E1CA28C390012E8F2 /* ImageViewerDismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F5A791CA28C390012E8F2 /* ImageViewerDismissTransition.swift */; };
-		D48F5A7F1CA28C390012E8F2 /* ImageViewerPresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F5A7A1CA28C390012E8F2 /* ImageViewerPresentTransition.swift */; };
-		D48F5A801CA28C390012E8F2 /* TTImageViewerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F5A7B1CA28C390012E8F2 /* TTImageViewerCell.swift */; };
-		D48F5A811CA28C390012E8F2 /* TTImageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F5A7C1CA28C390012E8F2 /* TTImageViewerController.swift */; };
-		D48F5A821CA28C390012E8F2 /* ZoomImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F5A7D1CA28C390012E8F2 /* ZoomImageScrollView.swift */; };
 		D49A4DF71CA2A974008E209E /* TextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A4DF61CA2A974008E209E /* TextTableViewController.swift */; };
 		D49A4E041CA2AA7F008E209E /* TextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A4E031CA2AA7F008E209E /* TextViewModel.swift */; };
 		D49A4E061CA2AB0A008E209E /* place.png in Resources */ = {isa = PBXBuildFile; fileRef = D49A4E051CA2AB0A008E209E /* place.png */; };
 		D49A4E081CA2ABB4008E209E /* UIView+Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A4E071CA2ABB4008E209E /* UIView+Constraint.swift */; };
+		D4F15BA71CA965BE008BAAF3 /* ImageViewerDismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F15B9E1CA965BE008BAAF3 /* ImageViewerDismissTransition.swift */; };
+		D4F15BA81CA965BE008BAAF3 /* ImageViewerPresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F15B9F1CA965BE008BAAF3 /* ImageViewerPresentTransition.swift */; };
+		D4F15BA91CA965BE008BAAF3 /* TTImageViewerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F15BA01CA965BE008BAAF3 /* TTImageViewerCell.swift */; };
+		D4F15BAA1CA965BE008BAAF3 /* TTImageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F15BA11CA965BE008BAAF3 /* TTImageViewerController.swift */; };
+		D4F15BAB1CA965BE008BAAF3 /* Kingfisher+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F15BA31CA965BE008BAAF3 /* Kingfisher+GIF.swift */; };
+		D4F15BAC1CA965BE008BAAF3 /* YLGIFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F15BA41CA965BE008BAAF3 /* YLGIFImage.swift */; };
+		D4F15BAD1CA965BE008BAAF3 /* YLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F15BA51CA965BE008BAAF3 /* YLImageView.swift */; };
+		D4F15BAE1CA965BE008BAAF3 /* ZoomImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F15BA61CA965BE008BAAF3 /* ZoomImageScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,19 +177,19 @@
 		D4015DFF1CA2412F003B05DC /* imageViewMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageViewMode.swift; sourceTree = "<group>"; };
 		D4015E011CA2471E003B05DC /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		D4015E041CA25273003B05DC /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		D420617E1CA8E36B0045BD0F /* Kingfisher+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Kingfisher+GIF.swift"; sourceTree = "<group>"; };
-		D420617F1CA8E36B0045BD0F /* YLGIFImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLGIFImage.swift; sourceTree = "<group>"; };
-		D42061801CA8E36B0045BD0F /* YLImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLImageView.swift; sourceTree = "<group>"; };
-		D48F5A791CA28C390012E8F2 /* ImageViewerDismissTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerDismissTransition.swift; sourceTree = "<group>"; };
-		D48F5A7A1CA28C390012E8F2 /* ImageViewerPresentTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerPresentTransition.swift; sourceTree = "<group>"; };
-		D48F5A7B1CA28C390012E8F2 /* TTImageViewerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTImageViewerCell.swift; sourceTree = "<group>"; };
-		D48F5A7C1CA28C390012E8F2 /* TTImageViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTImageViewerController.swift; sourceTree = "<group>"; };
-		D48F5A7D1CA28C390012E8F2 /* ZoomImageScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomImageScrollView.swift; sourceTree = "<group>"; };
 		D49A4DF61CA2A974008E209E /* TextTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTableViewController.swift; sourceTree = "<group>"; };
 		D49A4E031CA2AA7F008E209E /* TextViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewModel.swift; sourceTree = "<group>"; };
 		D49A4E051CA2AB0A008E209E /* place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = place.png; sourceTree = "<group>"; };
 		D49A4E071CA2ABB4008E209E /* UIView+Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraint.swift"; sourceTree = "<group>"; };
 		D49D4E6A1CA3849A00942864 /* BaiSiBuDeJie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaiSiBuDeJie-Bridging-Header.h"; sourceTree = "<group>"; };
+		D4F15B9E1CA965BE008BAAF3 /* ImageViewerDismissTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerDismissTransition.swift; sourceTree = "<group>"; };
+		D4F15B9F1CA965BE008BAAF3 /* ImageViewerPresentTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerPresentTransition.swift; sourceTree = "<group>"; };
+		D4F15BA01CA965BE008BAAF3 /* TTImageViewerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTImageViewerCell.swift; sourceTree = "<group>"; };
+		D4F15BA11CA965BE008BAAF3 /* TTImageViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTImageViewerController.swift; sourceTree = "<group>"; };
+		D4F15BA31CA965BE008BAAF3 /* Kingfisher+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Kingfisher+GIF.swift"; sourceTree = "<group>"; };
+		D4F15BA41CA965BE008BAAF3 /* YLGIFImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLGIFImage.swift; sourceTree = "<group>"; };
+		D4F15BA51CA965BE008BAAF3 /* YLImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLImageView.swift; sourceTree = "<group>"; };
+		D4F15BA61CA965BE008BAAF3 /* ZoomImageScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomImageScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,9 +245,8 @@
 		D4015D7E1CA238CB003B05DC /* BaiSiBuDeJie */ = {
 			isa = PBXGroup;
 			children = (
-				D420617D1CA8E36B0045BD0F /* YLGIFImage */,
+				D4F15B9D1CA965BE008BAAF3 /* TTImageViewerController */,
 				D49A4E051CA2AB0A008E209E /* place.png */,
-				D48F5A781CA28C390012E8F2 /* TTImageViewerController */,
 				D4015E031CA25263003B05DC /* Utils */,
 				D4015DFA1CA23CC1003B05DC /* API */,
 				D4015DF61CA23A8B003B05DC /* Model */,
@@ -342,28 +341,6 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		D420617D1CA8E36B0045BD0F /* YLGIFImage */ = {
-			isa = PBXGroup;
-			children = (
-				D420617E1CA8E36B0045BD0F /* Kingfisher+GIF.swift */,
-				D420617F1CA8E36B0045BD0F /* YLGIFImage.swift */,
-				D42061801CA8E36B0045BD0F /* YLImageView.swift */,
-			);
-			path = YLGIFImage;
-			sourceTree = "<group>";
-		};
-		D48F5A781CA28C390012E8F2 /* TTImageViewerController */ = {
-			isa = PBXGroup;
-			children = (
-				D48F5A791CA28C390012E8F2 /* ImageViewerDismissTransition.swift */,
-				D48F5A7A1CA28C390012E8F2 /* ImageViewerPresentTransition.swift */,
-				D48F5A7B1CA28C390012E8F2 /* TTImageViewerCell.swift */,
-				D48F5A7C1CA28C390012E8F2 /* TTImageViewerController.swift */,
-				D48F5A7D1CA28C390012E8F2 /* ZoomImageScrollView.swift */,
-			);
-			path = TTImageViewerController;
-			sourceTree = "<group>";
-		};
 		D49D4E5E1CA3847500942864 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +348,29 @@
 				D4015DBF1CA239C4003B05DC /* NetKit.xcodeproj */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4F15B9D1CA965BE008BAAF3 /* TTImageViewerController */ = {
+			isa = PBXGroup;
+			children = (
+				D4F15B9E1CA965BE008BAAF3 /* ImageViewerDismissTransition.swift */,
+				D4F15B9F1CA965BE008BAAF3 /* ImageViewerPresentTransition.swift */,
+				D4F15BA01CA965BE008BAAF3 /* TTImageViewerCell.swift */,
+				D4F15BA11CA965BE008BAAF3 /* TTImageViewerController.swift */,
+				D4F15BA21CA965BE008BAAF3 /* YLGIFImage */,
+				D4F15BA61CA965BE008BAAF3 /* ZoomImageScrollView.swift */,
+			);
+			path = TTImageViewerController;
+			sourceTree = "<group>";
+		};
+		D4F15BA21CA965BE008BAAF3 /* YLGIFImage */ = {
+			isa = PBXGroup;
+			children = (
+				D4F15BA31CA965BE008BAAF3 /* Kingfisher+GIF.swift */,
+				D4F15BA41CA965BE008BAAF3 /* YLGIFImage.swift */,
+				D4F15BA51CA965BE008BAAF3 /* YLImageView.swift */,
+			);
+			path = YLGIFImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -604,23 +604,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D48F5A811CA28C390012E8F2 /* TTImageViewerController.swift in Sources */,
+				D4F15BA71CA965BE008BAAF3 /* ImageViewerDismissTransition.swift in Sources */,
+				D4F15BAD1CA965BE008BAAF3 /* YLImageView.swift in Sources */,
+				D4F15BAE1CA965BE008BAAF3 /* ZoomImageScrollView.swift in Sources */,
 				D4015D821CA238CB003B05DC /* ImagesViewController.swift in Sources */,
-				D48F5A821CA28C390012E8F2 /* ZoomImageScrollView.swift in Sources */,
+				D4F15BA81CA965BE008BAAF3 /* ImageViewerPresentTransition.swift in Sources */,
 				D4015DFE1CA240B4003B05DC /* DataModel.swift in Sources */,
 				D4015DFC1CA23CCF003B05DC /* DataAPI.swift in Sources */,
-				D48F5A801CA28C390012E8F2 /* TTImageViewerCell.swift in Sources */,
+				D4F15BAA1CA965BE008BAAF3 /* TTImageViewerController.swift in Sources */,
 				D4015E051CA25273003B05DC /* Utils.swift in Sources */,
+				D4F15BA91CA965BE008BAAF3 /* TTImageViewerCell.swift in Sources */,
 				D4015D801CA238CB003B05DC /* AppDelegate.swift in Sources */,
-				D48F5A7E1CA28C390012E8F2 /* ImageViewerDismissTransition.swift in Sources */,
+				D4F15BAC1CA965BE008BAAF3 /* YLGIFImage.swift in Sources */,
 				D4015E001CA2412F003B05DC /* imageViewMode.swift in Sources */,
-				D42061811CA8E36B0045BD0F /* Kingfisher+GIF.swift in Sources */,
 				D4015E021CA2471E003B05DC /* ImageCell.swift in Sources */,
+				D4F15BAB1CA965BE008BAAF3 /* Kingfisher+GIF.swift in Sources */,
 				D49A4DF71CA2A974008E209E /* TextTableViewController.swift in Sources */,
 				D49A4E081CA2ABB4008E209E /* UIView+Constraint.swift in Sources */,
-				D48F5A7F1CA28C390012E8F2 /* ImageViewerPresentTransition.swift in Sources */,
-				D42061831CA8E36B0045BD0F /* YLImageView.swift in Sources */,
-				D42061821CA8E36B0045BD0F /* YLGIFImage.swift in Sources */,
 				D49A4E041CA2AA7F008E209E /* TextViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

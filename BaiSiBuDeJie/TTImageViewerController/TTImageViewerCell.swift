@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TTImageViewerCell: UICollectionViewCell {
 
@@ -17,18 +18,40 @@ class TTImageViewerCell: UICollectionViewCell {
         return view
     }()
     
+    var progressLab:UILabel = {
+        let lab = UILabel()
+        lab.textColor = UIColor.redColor()
+        return lab
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.contentView.addSubview(self.scrollView)
-        self.scrollView.clickAction = {
-            self.action?()
+        self.scrollView.clickAction = {[weak self] in
+            self?.action?()
         }
+        self.contentView.addSubview(self.progressLab)
+        self.progressLab.center = self.contentView.center
     }
 
     func setImageCellItem(item:TTImageViewerItem){
-        
-        self.scrollView.setImage(item.thumbImageView.image!)
 
+        let image = item.thumbImageView.image as? YLGIFImage
+        let imageCopy = (image == nil) ? item.thumbImageView.image!:image!.imageByCopy()
+        self.scrollView.setImage(imageCopy!,size: item.originSize)
+        
+        if let url = item.originURL{
+            
+            self.scrollView.imageView.kf_setImageWithURL_tt(url, placeholderImage:nil, optionsInfo: nil, progressBlock: { [weak self](receivedSize, totalSize) -> () in
+                let progress = Float(receivedSize) / Float(totalSize)
+                self?.progressLab.text = String(progress)
+                self?.progressLab.hidden = false
+                self?.progressLab.sizeToFit()
+                }, completionHandler: { [weak self](image, error, cacheType, imageURL) -> () in
+                    self?.progressLab.hidden = true
+                    self?.scrollView.setImage(image!,size: item.originSize)
+            })
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

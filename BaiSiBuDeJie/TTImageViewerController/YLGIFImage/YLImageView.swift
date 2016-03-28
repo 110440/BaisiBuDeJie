@@ -11,7 +11,12 @@ import QuartzCore
 
 class YLImageView : UIImageView {
     
-    private lazy var displayLink:CADisplayLink = CADisplayLink(target: self, selector: "changeKeyFrame:")
+    private lazy var displayLink:CADisplayLink = {
+        let weakProxy = WeakProxy(target: self, action: YLImageView.changeKeyFrame)
+        let link = CADisplayLink(target: weakProxy , selector: "changeKeyFrame:")
+        return link
+    }()
+    
     private var accumulator: NSTimeInterval = 0.0
     private var currentFrameIndex: Int = 0
     private var currentFrame: UIImage? = nil
@@ -41,6 +46,9 @@ class YLImageView : UIImageView {
         super.init(image: image, highlightedImage: highlightedImage)
         self.displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: displayLinkRunLoopModes)
         self.displayLink.paused = true
+    }
+    deinit{
+        self.displayLink.invalidate()
     }
     
     override var image: UIImage! {
@@ -143,6 +151,22 @@ class YLImageView : UIImageView {
             }
         } else {
             self.stopAnimating()
+        }
+    }
+}
+
+private class WeakProxy <T: AnyObject> {
+    weak var target: T?
+    let action: (T) -> (CADisplayLink!) -> ()
+
+    init(target:T,action:(T) -> (CADisplayLink!) -> ()){
+        self.target = target
+        self.action = action
+    }
+    
+    @objc func changeKeyFrame(dpLink: CADisplayLink!) -> Void {
+        if let target = self.target {
+            action(target)(dpLink)
         }
     }
 }

@@ -44,6 +44,15 @@ class TTImageViewerController : UIViewController ,UICollectionViewDataSource,UIC
         return view
     }()
     
+    private lazy var pageCtl:UIPageControl = {
+        let h = CGFloat(30)
+        let size = self.view.bounds.size
+        let rect = CGRect(x: 0, y: size.height - h , width:size.width, height: h)
+        let ctl = UIPageControl(frame: rect)
+        ctl.hidesForSinglePage = true
+        return ctl
+    }()
+    
     private var pageWidth:CGFloat {
         return self.collectionView.frame.size.width
     }
@@ -75,6 +84,9 @@ class TTImageViewerController : UIViewController ,UICollectionViewDataSource,UIC
         self.view.backgroundColor = UIColor.blackColor()
         self.collectionView.contentOffset = CGPoint(x: pageWidth * CGFloat(self.curCellIndexPath!.row), y: 0)
         self.collectionView.reloadData()
+        self.view.addSubview(self.pageCtl)
+        self.pageCtl.numberOfPages = self.imageItems.count
+        self.pageCtl.currentPage = self.curCellIndexPath!.row
     }
 
     //MARK:<UICollectionViewDataSource>
@@ -94,10 +106,10 @@ class TTImageViewerController : UIViewController ,UICollectionViewDataSource,UIC
 
         cell.scrollView.imageViewContentMode = self.imageViewContentMode
         cell.setImageCellItem(item)
-        
-        cell.action = {
-            self.curCellIndexPath = indexPath
-            self.dismissViewControllerAnimated(true, completion: nil)
+
+        cell.action = {[weak self]in
+            self?.curCellIndexPath = indexPath
+            self?.dismissViewControllerAnimated(true, completion: nil)
         }
         return cell
     }
@@ -119,5 +131,10 @@ class TTImageViewerController : UIViewController ,UICollectionViewDataSource,UIC
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return ImageViewerDismissTransition(duration:0.25)
     }
-
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        let x = scrollView.contentOffset.x
+        let page = x / scrollView.bounds.size.width
+        self.pageCtl.currentPage = Int(page)
+    }
 }

@@ -56,7 +56,8 @@ class ImagesViewController: UITableViewController {
         let imageData = self.imageItemList[indexPath.row]
         cell.setData(imageData)
         cell.action = {
-            let imageViewerItem = TTImageViewerItem(thumbImageView: cell.imageV, originSize: cell.imageV.image!.size, originURL: nil)
+            let url = NSURL(string: imageData.image3! )
+            let imageViewerItem = TTImageViewerItem(thumbImageView: cell.imageV, originSize: cell.imageV.image!.size, originURL: url)
             let imageViewer = TTImageViewerController(items: [imageViewerItem], showPageIndex: 0)
             imageViewer.imageViewContentMode = ZoomImageScrollViewContentMode.ScaleToFillForWidth
             self.presentViewController(imageViewer, animated: true, completion: nil)

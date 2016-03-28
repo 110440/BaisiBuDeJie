@@ -21,6 +21,7 @@ class YLGIFImage : UIImage {
     var frameDurations = [AnyObject]()
     var loopCount: UInt = 1
     var frameImages:[AnyObject] = [AnyObject]()
+    var data:NSData?
 
     struct YLGIFGlobalSetting {
         static var prefetchNumber:UInt = 2
@@ -44,18 +45,16 @@ class YLGIFImage : UIImage {
     }
 
     override init?(data: NSData, scale: CGFloat) {
+        
         let cgImgSource = CGImageSourceCreateWithData(data, nil)
         if YLGIFImage.isCGImageSourceContainAnimatedGIF(cgImgSource) {
+            self.data = data
             let cgimage = CGImageSourceCreateImageAtIndex(cgImgSource!, 0, nil)
             super.init(CGImage: cgimage!, scale: scale, orientation:.Up)
             createSelf(cgImgSource, scale: scale)
         } else {
             super.init(data: data, scale: scale)
         }
-    }
-
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     required convenience public init(imageLiteral name: String) {
@@ -139,6 +138,44 @@ class YLGIFImage : UIImage {
             }
         }
         return delay
+    }
+    
+    // coding
+    required public init?(coder aDecoder: NSCoder) {
+        
+        guard let originData = aDecoder.decodeObjectForKey("originData") as? NSData else{
+            self.data = nil
+            super.init(coder: aDecoder)
+            return
+        }
+        guard let scale = aDecoder.decodeObjectForKey("frameScale") as? NSNumber else{
+            self.data = nil
+            super.init(coder: aDecoder)
+            return
+        }
+        
+        self.frameScale = CGFloat(scale.floatValue)
+        self.data = originData
+        let cgImgSource = CGImageSourceCreateWithData(originData, nil)
+        super.init(coder: aDecoder)
+        createSelf(cgImgSource, scale: 1)
+    }
+    
+    override public func encodeWithCoder(aCoder: NSCoder) {
+        if self.data != nil{
+            aCoder.encodeObject(self.data, forKey: "originData")
+            aCoder.encodeObject(NSNumber(float:Float(self.frameScale) ), forKey: "frameScale")
+        }else{
+            super.encodeWithCoder(aCoder)
+        }
+    }
+    
+    public func imageByCopy()->UIImage?{
+        
+        guard let originData = self.data else {return nil}
+        let newImage = YLGIFImage(data:originData)
+        newImage?.frameScale = self.frameScale
+        return newImage
     }
 }
 
