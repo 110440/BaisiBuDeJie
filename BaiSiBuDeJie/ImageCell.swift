@@ -60,7 +60,7 @@ class ImageCell: UITableViewCell ,ImageDownloaderDelegate {
             
             //self.imageV.yy_setImageWithURL(NSURL(string:imageURLStr), placeholder: placeImg, options: [.ProgressiveBlur,.SetImageWithFadeAnimation], completion: nil)
 
-            self.imageV.kf_setImageWithURL_tt(NSURL(string:imageURLStr)!, placeholderImage: placeImg, optionsInfo: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
+            self.imageV.tt_setImageWithURL(NSURL(string:imageURLStr)!, placeholderImage: placeImg, optionsInfo: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
 //                if let image = image as? YLGIFImage {
 //                    let size = image.size ?? CGSizeZero
 //                    let maxSize = CGSize(width: 180, height: 200)

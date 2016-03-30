@@ -42,7 +42,7 @@ class TTImageViewerCell: UICollectionViewCell {
         
         if let url = item.originURL{
             
-            self.scrollView.imageView.kf_setImageWithURL_tt(url, placeholderImage:nil, optionsInfo: nil, progressBlock: { [weak self](receivedSize, totalSize) -> () in
+            self.scrollView.imageView.tt_setImageWithURL(url, placeholderImage:nil, optionsInfo: nil, progressBlock: { [weak self](receivedSize, totalSize) -> () in
                 let progress = Float(receivedSize) / Float(totalSize)
                 self?.progressLab.text = String(progress)
                 self?.progressLab.hidden = false
