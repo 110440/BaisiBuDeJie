@@ -4,4 +4,4 @@
 NetKit: https://github.com/110440/NetKit
 JSON to Model 工具：https://github.com/110440/GenerateJsonToModel
 Kingfisher: https://github.com/onevcat/Kingfisher
-Kingfisher + GIF : https://github.com/110440/Kingfisher-Gif
+
