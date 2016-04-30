@@ -4,4 +4,5 @@ use_frameworks!
 
 pod 'YYWebImage'
 pod 'JWAnimatedImage'
+pod 'Kingfisher', '~> 2.3'
 

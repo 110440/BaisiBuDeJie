@@ -36,18 +36,16 @@ class TTImageViewerCell: UICollectionViewCell {
 
     func setImageCellItem(item:TTImageViewerItem){
 
-        let image = item.thumbImageView.image as? YLGIFImage
-        let imageCopy = (image == nil) ? item.thumbImageView.image!:image!.imageByCopy()
-        self.scrollView.setImage(imageCopy!,size: item.originSize)
+        self.scrollView.setImage(item.thumbImageView.image!,size: item.originSize)
         
         if let url = item.originURL{
             
-            self.scrollView.imageView.tt_setImageWithURL(url, placeholderImage:nil, optionsInfo: nil, progressBlock: { [weak self](receivedSize, totalSize) -> () in
-                let progress = Float(receivedSize) / Float(totalSize)
-                self?.progressLab.text = String(progress)
-                self?.progressLab.hidden = false
-                self?.progressLab.sizeToFit()
-                }, completionHandler: { [weak self](image, error, cacheType, imageURL) -> () in
+            self.scrollView.imageView.kf_setImageWithURL(url, placeholderImage: nil, optionsInfo: nil, progressBlock: { [weak self](receivedSize, totalSize) in
+                    let progress = Float(receivedSize) / Float(totalSize)
+                    self?.progressLab.text = String(progress)
+                    self?.progressLab.hidden = false
+                    self?.progressLab.sizeToFit()
+                }, completionHandler: { [weak self](image, error, cacheType, imageURL) in
                     self?.progressLab.hidden = true
                     self?.scrollView.setImage(image!,size: item.originSize)
             })

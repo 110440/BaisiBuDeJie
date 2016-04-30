@@ -43,9 +43,11 @@ Kingfisher is a lightweight and pure Swift implemented library for downloading a
 ## Requirements
 
 * iOS 8.0+, tvOS 9.0+, watchOS 2.0+ or OS X 10.10+
-* Xcode 7.0 or above
+* Xcode 7.3 or above
 
-If you upgrades to Kingfiser 2.x, please read the [Kingfisher 2.0 Migration Guide](https://github.com/onevcat/Kingfisher/wiki/Kingfisher-2.0-Migration-Guide) for more information.
+If you are upgrading to Kingfisher 2.x from 1.x, please read the [Kingfisher 2.0 Migration Guide](https://github.com/onevcat/Kingfisher/wiki/Kingfisher-2.0-Migration-Guide) for more information.
+
+Kingfisher is now supporting Swift 2.2. If you need to use Kingfisher in Swift 2.1, you need to pin the version to 2.1.0.
 
 
 ## Installation
@@ -65,7 +67,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'Kingfisher', '~> 2.1'
+pod 'Kingfisher', '~> 2.3'
 ```
 
 Then, run the following command:
@@ -90,7 +92,7 @@ $ brew install carthage
 To integrate Kingfisher into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ``` ogdl
-github "onevcat/Kingfisher" ~> 2.1
+github "onevcat/Kingfisher" ~> 2.3
 ```
 
 Then, run the following command to build the Kingfisher framework:
@@ -329,6 +331,13 @@ prefetcher.stop()
 
 After prefetching, you could retrieve image or set the image view with other Kingfisher's methods, with the same `ImageCache` object you used for the prefetching.
 
+### Animated GIF
+
+You can load animated GIF by replacing `UIImageView` with `AnimatedImageView`
+```swift
+imageView = AnimatedImageView()
+```
+
 ## Future of Kingfisher
 
 I want to keep Kingfisher slim. This framework will focus on providing a simple solution for image downloading and caching. But that does not mean the framework will not be improved. Kingfisher is far away from perfect, and necessary and useful features will be added later to make it better.
@@ -344,3 +353,5 @@ Follow and contact me on [Twitter](http://twitter.com/onevcat) or [Sina Weibo](h
 ## License
 
 Kingfisher is released under the MIT license. See LICENSE for details.
+
+

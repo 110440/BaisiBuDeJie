@@ -54,22 +54,16 @@ class ImageCell: UITableViewCell ,ImageDownloaderDelegate {
         self.contentLab.text = data.text?.stringByReplacingOccurrencesOfString("\n", withString: "")
         self.timeLab.text = data.create_time
     
+        
         if let imageURLStr = data.image0{
             let placeImg = UIImage(named: "place.png")
             self.imageV.image = placeImg
-            
-            //self.imageV.yy_setImageWithURL(NSURL(string:imageURLStr), placeholder: placeImg, options: [.ProgressiveBlur,.SetImageWithFadeAnimation], completion: nil)
 
-            self.imageV.tt_setImageWithURL(NSURL(string:imageURLStr)!, placeholderImage: placeImg, optionsInfo: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
-//                if let image = image as? YLGIFImage {
-//                    let size = image.size ?? CGSizeZero
-//                    let maxSize = CGSize(width: 180, height: 200)
-//                    let scalew = maxSize.width / size.width
-//                    let scaleh = maxSize.height / size.height
-//                    let scale = min(scalew,scaleh)
-//                    image.frameScale = scale
-//                }
-            })
+
+//            self.imageV.tt_setImageWithURL(NSURL(string:imageURLStr)!, placeholderImage: placeImg, optionsInfo: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
+//
+//            })
+            self.imageV.kf_setImageWithURL(NSURL(string:imageURLStr)!, placeholderImage: placeImg, optionsInfo: nil, progressBlock: nil, completionHandler: nil)
             
         }else{
             self.imageV.image = nil

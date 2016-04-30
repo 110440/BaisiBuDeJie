@@ -2,6 +2,47 @@
 
 -----
 
+## [2.3.1 - Pod Me up](https://github.com/onevcat/Kingfisher/releases/tag/2.3.1) (2016-04-22)
+
+#### Fix
+* Exclude NSButton extension from no related target. [#292](https://github.com/onevcat/Kingfisher/pull/292)
+
+---
+
+## [2.3.0 - Warmly Welcome](https://github.com/onevcat/Kingfisher/releases/tag/2.3.0) (2016-04-21)
+
+#### Add
+* Add support for App Extension target. [#290](https://github.com/onevcat/Kingfisher/pull/290)
+* Add support for NSButton. [#287](https://github.com/onevcat/Kingfisher/pull/287)
+
+---
+
+## [2.2.2 - Spring Bird II](https://github.com/onevcat/Kingfisher/releases/tag/2.2.2) (2016-04-06)
+
+#### Fix
+* Add default values to optional parameters, which should be a part of 2.2.1. [#284](https://github.com/onevcat/Kingfisher/issues/284)
+
+---
+
+## [2.2.1 - Spring Bird](https://github.com/onevcat/Kingfisher/releases/tag/2.2.1) (2016-04-06)
+
+#### Fix
+* A memory leak caused by closure based Generator. [#281](https://github.com/onevcat/Kingfisher/pull/281)
+* Remove duplicated APIs since auto completion gets improved in Swift 2.2. [#283](https://github.com/onevcat/Kingfisher/pull/283)
+* Enable all recongnized format for `UIImage`. [#278](https://github.com/onevcat/Kingfisher/pull/278)
+
+---
+
+## [2.2.0 - Open Source Swift](https://github.com/onevcat/Kingfisher/releases/tag/2.2.0) (2016-03-24)
+
+#### Add
+* Compatible with latest Swift 2.2 and Xcode 7.3. [#270](https://github.com/onevcat/Kingfisher/pull/270). If you need to use Kingfisher in Swift 2.1, please consider to pin to version 2.1.0.
+
+#### Fix
+* A trivial issue that a context holder should not exist when decoding images background.
+
+---
+
 ## [2.1.0 - Prefetching](https://github.com/onevcat/Kingfisher/releases/tag/2.1.0) (2016-03-10)
 
 #### Add

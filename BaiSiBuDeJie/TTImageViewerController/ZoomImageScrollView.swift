@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 enum ZoomImageScrollViewContentMode{
     case ScaleToFit
@@ -18,9 +19,9 @@ class ZoomImageScrollView: UIScrollView , UIScrollViewDelegate {
     var imageViewContentMode:ZoomImageScrollViewContentMode = .ScaleToFit
     var clickAction:(()->Void)?
     
-    lazy var imageView:YLImageView = {
+    lazy var imageView:AnimatedImageView = {
         let size = self.bounds.size
-        let imageView = YLImageView(frame: CGRectMake(0, 0, size.width, size.height))
+        let imageView = AnimatedImageView(frame: CGRectMake(0, 0, size.width, size.height))
         imageView.userInteractionEnabled = true
         self.addSubview(imageView)
         return imageView
